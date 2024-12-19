@@ -8,8 +8,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        'green-main': '#02CCCE',
+      },
+      backgroundImage: {
+        'gradient_1': 'linear-gradient(0, #02CCCE 100%, #03D49E 100%), linear-gradient(90deg, #02CCCE 0%, #03D49E 100%)',
+        'gradient_2': 'linear-gradient(180deg, rgba(39, 37, 42, 0.50) 0%, rgba(24, 24, 26, 0.50) 100%)',
+      },
+      fontFamily: {
+        robotoMono: ['var(--font-roboto-mono)', 'monospace'], // Tailwind font utility
       },
     },
   },
