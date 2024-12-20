@@ -59,7 +59,7 @@ const Accordion = () => {
                 <p className="text-white text-[40px] font-bold -tracking-[1px] leading-[40px]c">
                   {item.question}
                 </p>
-                <div className="w-[110px] h-[110px] bg-white flex justify-center items-center">
+                <div className="w-[110px] h-[110px] min-w-[110px] bg-white flex justify-center items-center">
                   <Image
                     src="/icons/arrow_down.svg"
                     width={19}

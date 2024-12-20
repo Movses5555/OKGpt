@@ -67,83 +67,76 @@ export const Service = () => {
             <p className="text-[20px] font-bold leading-[26px]">Другие</p>
             <p className="text-[20px] font-bold leading-[26px]">OKGpt</p>
           </div>
-          <div className="flex flex-col gap-[40px]">
+          <div className="flex flex-col gap-[40px] mt-[22px]">
             {
-              data.map(item => (
-                <div className="flex items-center justify-between">
-                  <div className="flex justify-items-center">
-                    <Image
-                      src='/icons/service_icon.svg'
-                      width={47}
-                      height={47}
-                      alt='service_icon'
-                      className="w-[47px] h-[47px] mr-[30px] mt-[6px]"
-                    />
-                    <div className="">
-                      <p className="max-w-[445px] mb-[5px] text-[32px] font-bold leading-[28.8px] -tracking-[1.41px]">
-                        {item.title}
-                      </p>
-                      <p className={`max-w-[${item.maxW}px] text-[#C4C4C5] text-[20px] font-bold leading-[26px]`}>
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex justify-between w-[179px] mt-[9px]">
-                    <Image
-                      src={item.icon}
-                      width={item.w}
-                      height={item.h}
-                      alt='check_dark'
-                      className={`w-[${item.w}px] h-[${item.h}px] ml-[${item.ml}px]`}
-                    />
-                    <Image
-                      src='/icons/check_light.svg'
-                      width={42}
-                      height={42}
-                      alt='check_light'
-                      className="w-[42px] h-[42px] mr-[10px]"
-                    />
-                  </div>
-                </div>
-              ))
+              data.map((item) => {
+                return (
+                  <ServiceItem
+                    title={item.title}
+                    description={item.description}
+                    maxW={item.maxW}
+                    icon={item.icon}
+                    ml={item.ml}
+                    w={item.w}
+                    h={item.h}
+                  />
+                )
+              })
             }
-            {/* <div className="flex items-center justify-between">
-              <div className="flex justify-items-center">
-                <Image
-                  src='/icons/service_icon.svg'
-                  width={47}
-                  height={47}
-                  alt='service_icon'
-                  className="w-[47px] h-[47px] mr-[30px]"
-                />
-                <div className="">
-                  <p className="mb-[5px] text-[32px] font-bold leading-[28.8px] -tracking-[1px]">
-                    Решение рутинных задач
-                  </p>
-                  <p className="text-[#C4C4C5] text-[20px] font-bold leading-[26px]">
-                    Создание текстов, перевод текста итд.
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-[43px]">
-                <Image
-                  src='/icons/check_dark.svg'
-                  width={42}
-                  height={42}
-                  alt='check_dark'
-                  className="w-[42px] h-[42px] mx-[16px]"
-                />
-                <Image
-                  src='/icons/check_light.svg'
-                  width={42}
-                  height={42}
-                  alt='check_light'
-                  className="w-[42px] h-[42px] mx-[10px]"
-                />
-              </div>
-            </div> */}
           </div>
         </div>
+      </div>
+    </div>
+  )
+}
+
+
+const ServiceItem = ({
+  title,
+  description,
+  maxW,
+  icon,
+  ml,
+  w,
+  h,
+}) => {
+  return (
+    <div className="flex justify-between items-start">
+      <div className="flex justify-items-center">
+        <Image
+          src='/icons/service_icon.svg'
+          width={47}
+          height={47}
+          alt='service_icon'
+          className="w-[47px] h-[47px] mr-[30px] mt-[6px]"
+        />
+        <div className="">
+          <p className="max-w-[445px] mb-[5px] text-[32px] font-bold leading-[28.8px] -tracking-[1.41px]">
+            {title}
+          </p>
+          <p
+            style={{maxWidth: `${maxW}px`}}
+            className="text-[#C4C4C5] text-[20px] font-bold leading-[26px]"
+          >
+            {description}
+          </p>
+        </div>
+      </div>
+      <div className="flex items-center justify-between w-[179px] mt-[9px]">
+        <Image
+          src={icon}
+          width={w}
+          height={h}
+          alt='check_dark'
+          style={{ width: `${w}px`, height: `${h}px`, marginLeft: `${ml}px` }}
+        />
+        <Image
+          src='/icons/check_light.svg'
+          width={42}
+          height={42}
+          alt='check_light'
+          className="w-[42px] h-[42px] mr-[10px]"
+        />
       </div>
     </div>
   )

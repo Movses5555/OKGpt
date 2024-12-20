@@ -127,7 +127,7 @@ export const Footer = () => {
 											href={link.path}
 											className="text-[#999] text-2xl font-bold text-nowrap"
 										>
-											<p className="fontext-[#999] text-2xl leading-[29px] font-bold text-nowrap tracking-[1.36px]">
+											<p className="fontext-[#999] text-2xl leading-[29px] font-bold text-nowrap tracking-[0.76px]">
 												{link.text}
 											</p>
 										</Link>
